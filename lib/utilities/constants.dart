@@ -29,6 +29,31 @@ const kTextFieldInputDecoration = InputDecoration(
       borderSide: BorderSide.none),
 );
 
+const LinearGradient kButtonLinearGradient =
+    LinearGradient(colors: [Color(0xFF4BB2FE), Color(0xFF3279ED)]);
+
+Align ambience(weatherAmbience) {
+  return Align(
+    alignment: Alignment.topCenter,
+    child: Container(
+      width: 500,
+      height: 500,
+      decoration: BoxDecoration(
+          gradient: RadialGradient(colors: [
+        weatherAmbience,
+        const Color(0xFF191A1E).withOpacity(0),
+      ])),
+    ),
+  );
+}
+
 const kConditionTextStyle = TextStyle(
   fontSize: 100.0,
 );
+
+const kBlack = Color(0xFF191A1E);
+const kLightBlack = Color(0xFF21252E);
+const kLightGrey = Color(0xFF8D98A5);
+const kGrey = Color(0xFF6B737D);
+const kSemiBoldTextStyle = TextStyle(fontWeight: FontWeight.w600, fontSize: 25);
+const kMediumTextStyle = TextStyle(fontWeight: FontWeight.w500, fontSize: 20);

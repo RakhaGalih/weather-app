@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:geolocator/geolocator.dart';
 
+import '../utilities/constants.dart';
+
 class LoadingScreen extends StatefulWidget {
   const LoadingScreen({super.key});
 
@@ -22,28 +24,48 @@ class _LoadingScreenState extends State<LoadingScreen> {
   void getLocationData() async {
     await Geolocator.requestPermission();
     dynamic weatherData;
+    dynamic todayWeatherData;
     try {
       weatherData = await Future.value(WeatherModel().getLocationWeather())
           .timeout(const Duration(seconds: 5));
+      todayWeatherData =
+          await Future.value(WeatherModel().getTodayLocationWeather())
+              .timeout(const Duration(seconds: 5));
     } catch (e) {
       print('Failed to get data by $e');
     }
+    // ignore: use_build_context_synchronously
     Navigator.push(
         context,
         MaterialPageRoute(
             builder: (context) => LocationScreen(
                   locationWeather: weatherData,
+                  todayLocationWeather: todayWeatherData,
                 )));
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+        backgroundColor: kBlack,
         body: Center(
-      child: SpinKitDoubleBounce(
-        color: Colors.white,
-        size: 100.0,
-      ),
-    ));
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SpinKitDoubleBounce(
+                color: Colors.white,
+                size: 100.0,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                'Loading...',
+                style: kMediumTextStyle.copyWith(color: kLightGrey),
+              )
+            ],
+          ),
+        ));
   }
 }
