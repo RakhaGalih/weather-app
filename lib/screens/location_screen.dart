@@ -71,6 +71,7 @@ class _LocationScreenState extends State<LocationScreen> {
     return Scaffold(
       backgroundColor: kBlack,
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: SafeArea(
           child: Stack(
             children: [
@@ -146,11 +147,14 @@ class _LocationScreenState extends State<LocationScreen> {
                   SizedBox(
                     height: (isError) ? 130 : 105,
                   ),
-                  Text(
-                    weatherMessage,
-                    textAlign: TextAlign.center,
-                    style: kMediumTextStyle.copyWith(
-                        fontSize: (isError) ? 25 : 32, color: kLightGrey),
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Text(
+                      weatherMessage,
+                      textAlign: TextAlign.center,
+                      style: kMediumTextStyle.copyWith(
+                          fontSize: (isError) ? 25 : 32, color: kLightGrey),
+                    ),
                   ),
                   SizedBox(
                     height: (isError) ? 0 : 30,
@@ -234,9 +238,11 @@ class _LocationScreenState extends State<LocationScreen> {
                   ),
                   (isError)
                       ? const Padding(
-                          padding: EdgeInsets.only(bottom: 80),
+                          padding:
+                              EdgeInsets.only(bottom: 80, left: 20, right: 20),
                           child: Text(
                             'please provide a valid city name',
+                            textAlign: TextAlign.center,
                             style: kMediumTextStyle,
                           ),
                         )
@@ -254,6 +260,7 @@ class _LocationScreenState extends State<LocationScreen> {
                             SizedBox(
                               height: 170,
                               child: ListView.builder(
+                                  physics: const BouncingScrollPhysics(),
                                   padding:
                                       const EdgeInsets.fromLTRB(25, 15, 20, 0),
                                   scrollDirection: Axis.horizontal,
