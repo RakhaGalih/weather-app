@@ -106,38 +106,60 @@ class _LocationScreenState extends State<LocationScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    height: 100,
-                    width: double.maxFinite,
-                    child: GestureDetector(
-                      onTap: () async {
-                        var typedName = await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const CityScreen()));
-                        if (typedName != null) {
-                          var weatherData =
-                              await weather.getCityWeather(typedName);
-                          var todayWeatherData =
-                              await weather.getTodayCityWeather(typedName);
-                          getWeather(weatherData);
-                          getTodayWeather(todayWeatherData);
-                        }
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Icon(Icons.place),
-                          const SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            cityName,
-                            style: kSemiBoldTextStyle,
-                          )
-                        ],
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 25,
                       ),
-                    ),
+                      GestureDetector(
+                        onTap: () async {
+                          var weatherData = await weather.getLocationWeather();
+                          getWeather(weatherData);
+                          getTodayWeather(weatherData);
+                        },
+                        child: const Icon(
+                          Icons.approval_rounded,
+                        ),
+                      ),
+                      Expanded(
+                        child: SizedBox(
+                          height: 100,
+                          child: GestureDetector(
+                            onTap: () async {
+                              var typedName = await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const CityScreen()));
+                              if (typedName != null) {
+                                var weatherData =
+                                    await weather.getCityWeather(typedName);
+                                var todayWeatherData = await weather
+                                    .getTodayCityWeather(typedName);
+                                getWeather(weatherData);
+                                getTodayWeather(todayWeatherData);
+                              }
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Icon(Icons.place),
+                                const SizedBox(
+                                  width: 8,
+                                ),
+                                Text(
+                                  cityName,
+                                  style: kSemiBoldTextStyle,
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 60,
+                      )
+                    ],
                   ),
                   Image.asset(
                     'images/$weatherIcon.png',

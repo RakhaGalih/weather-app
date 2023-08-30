@@ -22,21 +22,40 @@ class _CityScreenState extends State<CityScreen> {
                 ambience(const Color(0xFF36EEFA).withOpacity(0.4)),
                 Column(
                   children: [
-                    const SizedBox(
-                      height: 100,
-                      width: double.maxFinite,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: 8,
+                    Row(
+                      children: [
+                        const SizedBox(
+                          width: 25,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Icon(
+                            Icons.arrow_back_ios,
                           ),
-                          Text(
-                            'Search Location',
-                            style: kSemiBoldTextStyle,
-                          )
-                        ],
-                      ),
+                        ),
+                        const Expanded(
+                          child: SizedBox(
+                            height: 100,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Text(
+                                  'Search Location',
+                                  style: kSemiBoldTextStyle,
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 60,
+                        )
+                      ],
                     ),
                     Image.asset(
                       'images/place.png',
