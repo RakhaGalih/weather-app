@@ -1,5 +1,4 @@
 # My Weather App
-## Made with ❤️ by Rakha
 🌦️ <b>Real-Time Weather Updates:</b>
 
 Stay informed with up-to-the-minute weather forecasts delivered straight to your device. Our app provides accurate and reliable data sourced from top meteorological agencies worldwide.
@@ -22,5 +21,5 @@ https://github.com/RakhaGalih/weather-app/assets/54633534/51679aee-4501-4b78-afb
 
 Design inspired by : @offdesignarea
 
-### Please enjoy! ❤️
+<b> Made with ❤️ by Rakha Please enjoy! </b>
 
