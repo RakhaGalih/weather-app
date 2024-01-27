@@ -4,13 +4,13 @@
 
 Stay informed with up-to-the-minute weather forecasts delivered straight to your device. Our app provides accurate and reliable data sourced from top meteorological agencies worldwide.
 
-.
+<br>
 
 ☀️ <b>Sleek and Intuitive Design:</b>
 
 Experience weather like never before with our sleek and user-friendly interface. Effortlessly swipe through forecasts and access essential weather information with a simple tap.
 
-.
+<br>
 
 🌍 <b>Global Coverage:</b>
 
