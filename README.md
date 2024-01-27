@@ -19,7 +19,7 @@ Here's the preview :
 
 https://github.com/RakhaGalih/weather-app/assets/54633534/51679aee-4501-4b78-afb7-c3b2d88bbeba
 
-<b> Made with ❤️ by Rakha Please enjoy! </b>
+<b> Made with ❤️ by Rakha. Please enjoy! </b>
 
 Design inspired by : @offdesignarea
 
