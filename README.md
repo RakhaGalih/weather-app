@@ -15,7 +15,7 @@ Experience weather like never before with our sleek and user-friendly interface.
 
 Whether you're planning a local hike or a cross-country adventure, our Weather App has you covered. Get forecasts for any location on the planet, ensuring you're prepared for any climate, anytime.
 
-Built with https://openweathermap.org/api
+Created with API from https://openweathermap.org/api
 
 Here's the preview :
 
