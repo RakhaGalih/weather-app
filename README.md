@@ -15,6 +15,8 @@ Experience weather like never before with our sleek and user-friendly interface.
 
 Whether you're planning a local hike or a cross-country adventure, our Weather App has you covered. Get forecasts for any location on the planet, ensuring you're prepared for any climate, anytime.
 
+Built with https://openweathermap.org/api
+
 Here's the preview :
 
 https://github.com/RakhaGalih/weather-app/assets/54633534/51679aee-4501-4b78-afb7-c3b2d88bbeba
